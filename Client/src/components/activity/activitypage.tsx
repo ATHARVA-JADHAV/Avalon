@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -6,7 +6,7 @@ import {
 } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import { app } from "../../firebase";
-import { UserAuth } from "../../context/AuthContext";
+// import { UserAuth } from "../../context/AuthContext";
 import {
   CardTitle,
   CardDescription,
@@ -29,9 +29,12 @@ const AuthenticationPage = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       // Check if the credential is not null before accessing its properties
-      if (result.credential) {
+      if (result) {
+        console.log(result);
+
         const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
+        console.log(credential);
+        // const token = credential.accessToken;s
         // The signed-in user info.
         const user = result.user;
         console.log(user);

@@ -1,12 +1,3 @@
-import { useState } from "react";
-import {
-  GoogleAuthProvider,
-  signInWithPopup,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
-import { getAuth } from "firebase/auth";
-import { app } from "../../firebase";
-// import { UserAuth } from "../../context/AuthContext";
 import {
   CardTitle,
   CardDescription,
@@ -17,48 +8,28 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-<<<<<<< Updated upstream
 // import React from "react";
 import { useState } from "react";
+import "../../App.css";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { app } from "../../firebase";
 import { UserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-
-=======
->>>>>>> Stashed changes
-
 const auth = getAuth(app);
-
-// const { handleGoogle, user } = UserAuth();
 
 const AuthenticationPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const singInWithGoogle = async () => {
-    await handleGoogle();
-    navigate("/productivity");
-  };
+  // const signInWithGoogle = async () => {
+  //   await handleGoogle();
+  //   navigate("/productivity");
+  // };
 
-  const signInWithGoogle = async () => {
-    const provider = new GoogleAuthProvider();
-    try {
-      const result = await signInWithPopup(auth, provider);
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      // The signed-in user info.
-      const user = result.user;
-      console.log(user);
-      alert("Successfully Signed In with Google!");
-    } catch (error) {
-      // Handle Errors here.
-      console.error(error);
-      alert("Error signing in with Google");
-    }
-  };
+  const { handleGoogle } = UserAuth();
+
+  // const navigate = useNavigate();
 
   const createUser = () => {
     createUserWithEmailAndPassword(auth, email, password).then(() =>
@@ -66,19 +37,16 @@ const AuthenticationPage = () => {
     );
   };
 
-<<<<<<< Updated upstream
   const signInWithGoogle = async () => {
     await handleGoogle();
-    navigate('/dashboard')
+    navigate("/dashboard");
     return alert("Successfully Signed In with Google!");
   };
 
-=======
->>>>>>> Stashed changes
   return (
     <div className="flex flex-row h-screen">
       <div className="left-page w-2/4 h-screen flex items-center justify-center bg-black font-bold">
-        <a href="" className="text-white mt-8 ml-8">
+        <a href="" className="text-white mt-8 ml-8 text-xl ">
           Carbaonara
         </a>
       </div>
@@ -117,7 +85,8 @@ const AuthenticationPage = () => {
                 <Button className="w-full" type="submit" onClick={createUser}>
                   Sign Up
                 </Button>
-                <Button className="bg-blue-300" onClick={signInWithGoogle}>
+                <Button className=" bg-blue-300" onClick={signInWithGoogle}>
+                  {" "}
                   Sign In with Google
                 </Button>
               </div>
