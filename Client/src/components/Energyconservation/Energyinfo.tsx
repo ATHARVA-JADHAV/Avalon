@@ -1,4 +1,5 @@
-import { Dashboard } from "../dashboard/Dashboard"
+
+import Sidebar from "../overlay/Sidebar"
 import EnergyForm from "./Energyform"
 
 import './energy.css'
@@ -6,7 +7,7 @@ import './energy.css'
 const Energyinfo = () => {
   return (
     <div className="background h-screen  w-full">
-        <Dashboard/>
+<Sidebar/>
        <EnergyForm/>
     </div>
   )
