@@ -42,7 +42,7 @@ export default function Sidebar() {
 
   return (
     <div>
-      <Button onClick={toggleDrawer(true)}><ViewSidebarIcon sx={{ color:'white'}} /></Button>
+      <Button onClick={toggleDrawer(true)}><ViewSidebarIcon sx={{ color:'black'}} /></Button>
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>
