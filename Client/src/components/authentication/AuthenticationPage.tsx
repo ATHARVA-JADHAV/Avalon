@@ -8,14 +8,33 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import React from "react";
+// import React from "react";
 import { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { app } from ""
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-// import { UserAuth } from "../context/AuthContext";
+import { app } from "../../firebase";
+import { UserAuth } from "../../context/AuthContext";
+
+const auth = getAuth(app);
 
 const AuthenticationPage = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { handleGoogle } = UserAuth();
+
+  // const navigate = useNavigate();
+
+  const createUser = () => {
+    createUserWithEmailAndPassword(auth, email, password).then(() =>
+      alert("Success")
+    );
+  };
+
+  const signInWithGoogle = async () => {
+    await handleGoogle();
+    return alert("Successfully Signed In with Google!");
+  };
+
   return (
     <div className="flex flex-row h-screen">
       <div className="left-page w-2/4 h-screen flex items-center justify-center font-bold">
@@ -39,18 +58,29 @@ const AuthenticationPage = () => {
                   <Input
                     id="email"
                     placeholder="m@example.com"
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                     type="email"
+                    value={email}
                   />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="password">Password</Label>
-                  <Input id="password" required type="password" />
+                  <Input
+                    id="password"
+                    required
+                    type="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                  />
                 </div>
-                <Button className="w-full" type="submit">
+                <Button className="w-full" type="submit" onClick={createUser}>
                   Sign Up
                 </Button>
-                <Button className=" bg-blue-300"> Sign In with Google</Button>
+                <Button className=" bg-blue-300" onClick={signInWithGoogle}>
+                  {" "}
+                  Sign In with Google
+                </Button>
               </div>
             </CardContent>
           </Card>
