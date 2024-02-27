@@ -39,7 +39,8 @@ const EnergyForm: React.FC = () => {
 
     try {
       // Prepare the input text for the AI API
-      const inputText = `What are good measures to save our environment for using ${appliances} for ${usageHours} hours?`;
+      // Modified to request measures to save electrical energy and resource consumption, and alternate sources
+      const inputText = `What are good measures we can take to save our electrical energy and resource consumption for using ${appliances} for ${usageHours} hours? Also, provide alternate sources.`;
 
       const result = await model.generateContent(inputText);
       const text = result.response.text();
