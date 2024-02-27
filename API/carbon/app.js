@@ -2,10 +2,15 @@ const express = require('express');
 const csv = require('csv-parser');
 const fs = require('fs');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 const carData = [];
 app.use(bodyParser.json());
+app.use(cors());
+app.get('/calculate_emission', (req, res) => {
+    res.send("from server")
+})
 
 // Load the dataset into memory
 fs.createReadStream('CARSdb.csv')
@@ -23,7 +28,10 @@ app.post('/calculate_emission', (req, res) => {
         return res.status(400).json({ error: 'Car model not provided' });
     }
 
-    const car_model = req.body.car_model; // Corrected line
+    const { car_model, purchase_year, service_year, distance } = req.body; // Corrected line
+
+    console.log(car_model);
+    console.log(req.body);
 
     const car = carData.find((car) => {
         const carModel = car['ID,Car_Model,Purchase_Year,Recent_Servicing_Year,Carbon_Emission_Rate'].split(',')[1].trim();
