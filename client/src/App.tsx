@@ -1,9 +1,10 @@
-import { Button } from "@/components/ui/button"
+import AuthenticationPage from "./components/authentication/AuthenticationPage"
+
 
 export default function App() {
   return (
-    <div className="bg-black h-screen w-full"> 
-      <Button >Click me</Button>
+    <div className="bg-black"> 
+<AuthenticationPage/>
     </div>
   )
 }
