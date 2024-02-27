@@ -8,6 +8,7 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+<<<<<<< Updated upstream
 // import React from "react";
 import { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
@@ -35,6 +36,12 @@ const AuthenticationPage = () => {
     return alert("Successfully Signed In with Google!");
   };
 
+=======
+
+
+
+ function AuthenticationPage() {
+>>>>>>> Stashed changes
   return (
     <div className="flex flex-row h-screen">
       <div className="left-page w-2/4 h-screen flex items-center justify-center font-bold">
