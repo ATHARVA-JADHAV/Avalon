@@ -6,12 +6,11 @@ import Energyinfo from "./components/Energyconservation/Energyinfo";
 import Homepage from "./components/Homepage/Homepage";
 import ProductsImpact from "./components/ProductsImpact/ProductsImpact";
 import Activities from "./components/activity/Activities";
-Activities
+
 
 
 export default function Router(){
   return (
-
       <Routes>
         <Route path="/energy" element={<Energyinfo/>}/>
 <Route path="/auth" element={<AuthenticationPage/>}/>

@@ -16,7 +16,6 @@ import ViewSidebarIcon from '@mui/icons-material/ViewSidebar';
 
 export default function Sidebar() {
   const [open, setOpen] = React.useState(false);
-
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
   };

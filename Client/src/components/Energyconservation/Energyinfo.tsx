@@ -6,6 +6,7 @@ import "./energy.css";
 
 const Energyinfo = () => {
   const [formData, setFormData] = useState<any>({});
+  const [aiResponse, setAiResponse] = useState<string>(""); // State for AI response
   const [showData, setShowData] = useState(false);
 
   const handleFormData = (data: any) => {
@@ -14,15 +15,24 @@ const Energyinfo = () => {
   };
 
   return (
-    <div className="background h-screen  w-full">
-      <Sidebar />
-      <EnergyForm onSubmit={handleFormData} />
+    <div className="background h-screen w-full">
+      <EnergyForm onSubmit={handleFormData} setAiResponse={setAiResponse} /> {/* Pass setAiResponse as prop */}
       {showData && (
-        <div className=" top-0 left-0 w-full h-screen flex items-center justify-center bg-opacity-50">
-          <div className="bg-white p-8 rounded-lg shadow-lg">
+        
+        <div className="flex flex-col w-full h-screen">
+           <Sidebar />
+          <div className="title flex w-full justify-center flex-col font-bold *:flex-col"><p>Appliance Name: {formData.appliances}</p>
+            <p>Usage Hours: {formData.usageHours}</p></div>
+          <div className="bg-white p-8 shadow-lg">
             <h1 className="font-bold text-xl mb-2">Form Data</h1>
             <p>Appliance Name: {formData.appliances}</p>
             <p>Usage Hours: {formData.usageHours}</p>
+            {aiResponse && ( // Display AI response if available
+              <div>
+                <h2>AI Response:</h2>
+                <p>{aiResponse}</p>
+              </div>
+            )}
           </div>
         </div>
       )}
