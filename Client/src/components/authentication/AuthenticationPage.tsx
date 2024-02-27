@@ -37,7 +37,7 @@ const AuthenticationPage = () => {
 
   return (
     <div className="flex flex-row h-screen">
-      <div className="left-page w-2/4 h-screen flex items-center justify-center font-bold">
+      <div className="left-page w-2/4 h-screen flex items-center justify-center bg-black font-bold">
         <a href="" className="text-white mt-8 ml-8   ">
           Carbaonara
         </a>
