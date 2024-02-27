@@ -6,9 +6,9 @@ import Energyinfo from "./components/Energyconservation/Energyinfo";
 import Homepage from "./components/Homepage/Homepage";
 import ProductsImpact from "./components/ProductsImpact/ProductsImpact";
 import Activities from "./components/activity/Activities";
-import { CarbonEmissionForm } from "./components/carbonem/carbonemission";
 import Blog from "./components/Blogs/Blogpage";
-
+import CarbonEmissionMain from "./components/carbonem/CarbonEmissionMain";
+CarbonEmissionMain
 
 
 export default function Router(){
@@ -20,8 +20,9 @@ export default function Router(){
 <Route path="/" element={<Homepage/>}/>
 <Route path="/products" element={<ProductsImpact/>}/>
 <Route path="/activities" element={<Activities/>}/>
-<Route path="/carbon" element={<CarbonEmissionForm/>}/>
-<Route path="/blogs" element={<Blog/>}/>s
+<Route path="/carbon" element={<CarbonEmissionMain/>}/>
+<Route path="/blogs" element={<Blog/>}/>
+
       </Routes>
   );
 };
