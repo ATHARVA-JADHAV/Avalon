@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Sidebar from "../overlay/Sidebar";
-import EnergyForm from "./Energyform";
+import EnergyForm from "./ProductsForm";
 
-import "./energy.css";
+
 
 const Energyinfo = () => {
   const [formData, setFormData] = useState<any>({});
@@ -21,8 +21,8 @@ const Energyinfo = () => {
         <div className=" top-0 left-0 w-full h-screen flex items-center justify-center bg-opacity-50">
           <div className="bg-white p-8 rounded-lg shadow-lg">
             <h1 className="font-bold text-xl mb-2">Form Data</h1>
-            <p>Appliance Name: {formData.appliances}</p>
-            <p>Usage Hours: {formData.usageHours}</p>
+            <p>Appliance Name: {formData.productsName}</p>
+
           </div>
         </div>
       )}

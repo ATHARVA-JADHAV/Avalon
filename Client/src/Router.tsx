@@ -4,7 +4,9 @@ import AuthenticationPage from "./components/authentication/AuthenticationPage";
 import { Dashboard } from "./components/dashboard/Dashboard";
 import Energyinfo from "./components/Energyconservation/Energyinfo";
 import Homepage from "./components/Homepage/Homepage";
-
+import ProductsImpact from "./components/ProductsImpact/ProductsImpact";
+import Activities from "./components/activity/Activities";
+Activities
 
 
 export default function Router(){
@@ -15,6 +17,8 @@ export default function Router(){
 <Route path="/auth" element={<AuthenticationPage/>}/>
 <Route path="/dashboard" element={<Dashboard/>}/>
 <Route path="/home" element={<Homepage/>}/>
+<Route path="/products" element={<ProductsImpact/>}/>
+<Route path="/activities" element={<Activities/>}/>
       </Routes>
 
   );
