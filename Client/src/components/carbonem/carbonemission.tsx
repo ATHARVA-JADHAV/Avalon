@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { useState, FormEvent } from 'react';
 import './carbonem.css';
 
@@ -38,12 +39,23 @@ const CarbonEmissionForm = () => {
     }
   };
 
+=======
+import { Button } from "../ui/button";
+import "./carbonem.css";
+
+
+export const CarbonEmissionForm = () => {
+>>>>>>> Stashed changes
   return (
-    <div className="main">
+    <div className="main rounded-lg">
       <div className="bg">
-        <div className="form-element">
+        <div className="form-elemen t">
           <p className="text">Carbon Emission Calculator</p>
+<<<<<<< Updated upstream
           <form className="form" onSubmit={handleCalculate}>
+=======
+          <form className="form ">
+>>>>>>> Stashed changes
             <label htmlFor="car">Car</label>
             <select id="car" name="car">
               <option value="Creta">Creta</option>
@@ -51,6 +63,7 @@ const CarbonEmissionForm = () => {
               <option value="swift">Swift</option>
               <option value="wagonR">WagonR</option>
             </select>
+<<<<<<< Updated upstream
             <label htmlFor="purchaseYear">Purchase Year</label>
             <input type="text" id="purchaseYear" name="purchaseYear" />
             <label htmlFor="serviceYear">Service Year</label>
@@ -60,6 +73,19 @@ const CarbonEmissionForm = () => {
             <button type="submit" id="button">
               Calculate
             </button>
+=======
+            <label htmlFor="dateBought">Date-Bought</label>
+            <input type="date" id="dateBought" name="dateBought" />
+            <label htmlFor="lastServicingDate">Last Servicing Date</label>
+            <input
+              type="date"
+              id="lastServicingDate"
+              name="lastServicingDate"
+            />
+            <label htmlFor="kmstravelled">KMs Travelled</label>
+            <input type="text" id="kmstravelled" name="kmstravelled" />
+<Button className="m-2 bg-grey text-black">Calculate </Button>
+>>>>>>> Stashed changes
           </form>
           {carbonEmission && (
             <div className="result">

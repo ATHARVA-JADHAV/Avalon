@@ -13,12 +13,20 @@ import { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { app } from "../../firebase";
 import { UserAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+
+
 
 const auth = getAuth(app);
 
 const AuthenticationPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const singInWithGoogle = async () => {
+    await handleGoogle();
+    navigate("/productivity");
+  };
 
   const { handleGoogle } = UserAuth();
 
@@ -32,6 +40,7 @@ const AuthenticationPage = () => {
 
   const signInWithGoogle = async () => {
     await handleGoogle();
+    navigate('/dashboard')
     return alert("Successfully Signed In with Google!");
   };
 

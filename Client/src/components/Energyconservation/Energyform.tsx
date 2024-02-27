@@ -37,7 +37,8 @@ const EnergyForm: React.FC<{ onSubmit: (data: any) => void; setAiResponse: (resp
     }
 
     try {
-      const inputText = `What are good measures to save our environment for using ${appliances} for ${usageHours} hours?`;
+      const inputText = `Appliance ${appliances} for ${usageHours} hours give output :impact of the user's electricity consumption in terms of CO2 emissions or equivalent environmental metrics.give short summary of 50 words and remove ** 
+`;
 
       const result = await model.generateContent(inputText);
       const text = result.response.text();
