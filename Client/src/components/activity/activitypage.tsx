@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -6,7 +6,7 @@ import {
 } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import { app } from "../../firebase";
-// import { UserAuth } from "../../context/AuthContext";
+import { UserAuth } from "../../context/AuthContext";
 import {
   CardTitle,
   CardDescription,
@@ -17,42 +17,29 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-<<<<<<< Updated upstream
-// import React from "react";
-import { useState } from "react";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { app } from "../../firebase";
-import { UserAuth } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
-
-
-=======
->>>>>>> Stashed changes
 
 const auth = getAuth(app);
-
-// const { handleGoogle, user } = UserAuth();
 
 const AuthenticationPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-  const singInWithGoogle = async () => {
-    await handleGoogle();
-    navigate("/productivity");
-  };
 
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      // The signed-in user info.
-      const user = result.user;
-      console.log(user);
-      alert("Successfully Signed In with Google!");
+      // Check if the credential is not null before accessing its properties
+      if (result.credential) {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        console.log(user);
+        alert("Successfully Signed In with Google!");
+      } else {
+        console.error("No credential found in sign-in result");
+        alert("Error signing in with Google");
+      }
     } catch (error) {
       // Handle Errors here.
       console.error(error);
@@ -66,15 +53,6 @@ const AuthenticationPage = () => {
     );
   };
 
-<<<<<<< Updated upstream
-  const signInWithGoogle = async () => {
-    await handleGoogle();
-    navigate('/dashboard')
-    return alert("Successfully Signed In with Google!");
-  };
-
-=======
->>>>>>> Stashed changes
   return (
     <div className="flex flex-row h-screen">
       <div className="left-page w-2/4 h-screen flex items-center justify-center bg-black font-bold">

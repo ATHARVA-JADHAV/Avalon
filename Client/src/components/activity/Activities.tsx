@@ -74,7 +74,7 @@ const Activities = () => {
         <div className="flex justify-end">
           <AlertDialog>
             <AlertDialogTrigger asChild>
-              <Button variant="outline">Create New</Button>
+              <Button>Create New</Button>
             </AlertDialogTrigger>
             <AlertDialogContent>
               <AlertDialogHeader>
@@ -119,7 +119,7 @@ const Activities = () => {
             >
               <h2>{activity.title}</h2>
               <p>{activity.description}</p>
-              <p>{activity.location}</p>
+              {/* <p>{activity.location}</p> */}
             </div>
           ))}
         </div>

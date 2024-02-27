@@ -7,5 +7,9 @@
 }
 
 #main {
-    
+  background: radial-gradient(
+    125% 125% at 50% 10%,
+    #ffffff 40%,
+    rgb(69, 116, 197) 100%
+  );
 }

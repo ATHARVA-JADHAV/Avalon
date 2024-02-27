@@ -8,7 +8,10 @@ const API_KEY = "AIzaSyAAO4E-Bqpu4Nr8UHwnmn7bAVxK6odumEE";
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
-const EnergyForm: React.FC<{ onSubmit: (data: any) => void; setAiResponse: (response: string) => void }> = ({ onSubmit, setAiResponse }) => {
+const EnergyForm: React.FC<{
+  onSubmit: (data: any) => void;
+  setAiResponse: (response: string) => void;
+}> = ({ onSubmit, setAiResponse }) => {
   const [formData, setFormData] = useState({
     usageHours: "",
     appliances: "",
@@ -58,7 +61,10 @@ const EnergyForm: React.FC<{ onSubmit: (data: any) => void; setAiResponse: (resp
   return (
     <div>
       <div className="fixed background top-0 left-0 w-full h-screen flex items-center justify-center bg-opacity-50">
-        <form onSubmit={handleSubmit} className="p-10 rounded-lg bg-white shadow-lg">
+        <form
+          onSubmit={handleSubmit}
+          className="p-10 rounded-lg bg-white shadow-lg"
+        >
           <h1 className="font-bold text-xl mr-2 mb-2">Enter the Details </h1>
           <div className="grid w-full gap-2">
             <label htmlFor="appliances" className="text-black">
