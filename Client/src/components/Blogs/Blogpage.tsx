@@ -7,13 +7,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import "../Blogs/Blogpage.css";
-import Sidebar from "../overlay/Sidebar";
 const Blog = () => {
   return (
-    <>
-    <Sidebar/>
     <div className="all">
-     
       <div className="desc">
         <h1 id="blogg">Blogs</h1>
         <p id="adobe">
@@ -26,12 +22,10 @@ const Blog = () => {
         <div className="indi">
           <Card className="card1">
             <CardHeader>
-
               <CardTitle>An emergency beak for the climate</CardTitle>
               <CardDescription></CardDescription>
             </CardHeader>
             <CardContent className="content">
-              
               <p>
                 Originally published in forskning.no. Translated from Norwegian.
                 The climate crisis is here. We are experiencing possibly the
@@ -252,7 +246,6 @@ const Blog = () => {
         </div>
       </div>
     </div>
-    </>
   );
 };
 

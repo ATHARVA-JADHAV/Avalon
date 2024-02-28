@@ -1,81 +1,81 @@
 .all{
-    background: radial-gradient(125% 100% at 30% 30%, #ffffff 20%, rgb(69, 116, 197) 100%); 
+  background: radial-gradient(125% 100% at 30% 30%, #ffffff 20%, rgb(69, 116, 197) 100%); 
 }
 #blogg{
-    font-size: 33px;
-    font-weight: bold;
-    margin-top: 10%;
-    margin-bottom: 2%;
-    padding-bottom: 0%;
+  font-size: 33px;
+  font-weight: bold;
+  margin-top: 10%;
+  margin-bottom: 2%;
+  padding-bottom: 0%;
 }
 #adobe{
-    font: weight 300;
-    font-size: 17px;
-    margin-bottom: 10%;  
-    width: 850px;
-    color: #4b4b48;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font: weight 300;
+  font-size: 17px;
+  margin-bottom: 10%;  
+  width: 850px;
+  color: #4b4b48;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .content{
-    text-align:left
+  text-align:left
 }
 .all{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .indi{
-    box-shadow: 0 0 10px 5px rgba(40, 65, 89, 0.5);
-    
+  box-shadow: 0 0 10px 5px rgba(40, 65, 89, 0.5);
+  
 }
 .card1 {
-    text-align: left;
-    width: 700px;
-    height: 700px;
-    transition: transform 0.3s ease; /* Add transition for smooth effect */
+  text-align: left;
+  width: 700px;
+  height: 700px;
+  transition: transform 0.3s ease; /* Add transition for smooth effect */
 
-  }
-  .card1:hover {
-    transform: scale(1.1); /* Zoom in by 10% on hover */
 }
-  .card2 {
-    margin-top: 7%;
-    text-align: left;
-    width: 700px;
-    height: 650px;
-    transition: transform 0.3s ease; /* Add transition for smooth effect */
+.card1:hover {
+  transform: scale(1.1); /* Zoom in by 10% on hover */
+}
+.card2 {
+  margin-top: 7%;
+  text-align: left;
+  width: 700px;
+  height: 650px;
+  transition: transform 0.3s ease; /* Add transition for smooth effect */
 }
 
 .card2:hover {
-    transform: scale(1.1); /* Zoom in by 10% on hover */
+  transform: scale(1.1); /* Zoom in by 10% on hover */
 }
 
 
 .card3{
-    margin-top: 7%;
-    margin-bottom: 7%;
-    text-align: left;
-    width: 700px;
-    height: 925px;
-    transition: transform 0.3s ease; /* Add transition for smooth effect */
+  margin-top: 7%;
+  margin-bottom: 7%;
+  text-align: left;
+  width: 700px;
+  height: 925px;
+  transition: transform 0.3s ease; /* Add transition for smooth effect */
 
 }
 .card3:hover {
-    transform: scale(1.1); /* Zoom in by 10% on hover */
+  transform: scale(1.1); /* Zoom in by 10% on hover */
 }
 
 .card4{
-    margin-top: 7%;
-    margin-bottom: 7%;
-    text-align: left;
-    width: 700px;
-    height: 650px;
-    transition: transform 0.3s ease; /* Add transition for smooth effect */
+  margin-top: 7%;
+  margin-bottom: 7%;
+  text-align: left;
+  width: 700px;
+  height: 650px;
+  transition: transform 0.3s ease; /* Add transition for smooth effect */
 
 }
 .card4:hover {
-    transform: scale(1.1); /* Zoom in by 10% on hover */
+  transform: scale(1.1); /* Zoom in by 10% on hover */
 }
