@@ -24,7 +24,7 @@ const Energyinfo: React.FC = () => {
 
     try {
       const inputText = `Offer educational content on the environmental impact of energy consumption and the benefits of energy conservation. based on Appliance ${data.appliances} for ${data.usageHours} how the impact happens when we use their green alternative give short summary of 50 words and remove **`;
-      const inputLinks = `calculate the carbon emitted and energy conserved for the graph in short also show the calculations ${data.appliances} for ${data.usageHours} and remove ** structure it and give summary`;
+      const inputLinks = `calculate the carbon emitted and energy conserved for the graph in short also show the calculations ${data.appliances} for ${data.usageHours} and remove ** structure it and give summary remove **`;
       const facts = 'facts in related to the ${data.appliances} impact on environment in 50words remove **'
       const result = await model.generateContent(inputText);
       const result2 = await model.generateContent(inputLinks);
@@ -57,6 +57,7 @@ const Energyinfo: React.FC = () => {
 
   return (
     <div className="h-screen w-full">
+   <Sidebar/>
       <EnergyForm onSubmit={handleFormData} setAiResponse={setAiResponse} />
       {showData && (
         <div className="flex flex-col w-full h-screen">

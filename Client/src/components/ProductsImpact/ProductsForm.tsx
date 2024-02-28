@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import Sidebar from '../overlay/Sidebar';
 
 
 interface FormData {
@@ -33,7 +34,9 @@ const EnergyForm: React.FC<{ onSubmit: (data: any) => void }> = ({ onSubmit }) =
 
   return (
     <div>
+      
       <div className="fixed background top-0 left-0 w-full h-screen flex items-center justify-center bg-opacity-50">
+      <Sidebar/>'
         <form onSubmit={handleSubmit} className="p-10 rounded-lg bg-white shadow-lg">
           <h1 className="font-bold text-xl mr-2 mb-2">Enter the Details</h1>
           <div className="grid w-full gap-2">
