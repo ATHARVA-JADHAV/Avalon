@@ -5,7 +5,7 @@ Sidebar
 
 const CarbonEmissionMain = () => {
   return (
-    <div><Sidebar/><CarbonEmissionForm/></div>
+    <div className='background'><Sidebar/><CarbonEmissionForm/></div>
   )
 }
 

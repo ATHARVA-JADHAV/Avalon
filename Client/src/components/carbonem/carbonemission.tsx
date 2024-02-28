@@ -1,6 +1,7 @@
 import { useState, FormEvent } from 'react';
 import './carbonem.css';
 import Sidebar from '../overlay/Sidebar';
+import { Button } from '../ui/button';
 
 
 const CarbonEmissionForm = () => {
@@ -47,7 +48,7 @@ const CarbonEmissionForm = () => {
         
         <div className="form-element flex flex-col items-center">
           
-          <p className="text text-xl font-semibold m-4 ">Carbon Emission Calculator</p>
+          <p className="text text-2xl font-semibold m-4 ">Carbon Emission Calculator</p>
           <Sidebar/>
           <form className="form" onSubmit={handleCalculate}>
             <label htmlFor="car">Car</label>
@@ -63,9 +64,9 @@ const CarbonEmissionForm = () => {
             <input type="text" id="serviceYear" name="serviceYear" />
             <label htmlFor="distance">Distance</label>
             <input type="text" id="distance" name="distance" />
-            <button type="submit" id="button">
+            <Button className='mt-2' type="submit" id="button">
               Calculate
-            </button>
+            </Button>
           </form>
           {carbonEmission && (
             <div className="result font-mono text-3xl font-bold">
