@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 // import React from "react";
 import { useState } from "react";
-import "../../App.css";
+import '../../App.css'
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { app } from "../../firebase";
 import { UserAuth } from "../../context/AuthContext";

@@ -1,8 +1,16 @@
 import { useState, useEffect } from "react";
 import { Button } from "../ui/button";
-import { addDoc, collection, onSnapshot } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import {
+  addDoc,
+  collection,
+  onSnapshot,
+  doc,
+  getDoc,
+  updateDoc,
+} from "firebase/firestore";
 import "./activity.css";
-import { db } from "../../firebase";
+import { db, auth } from "../../firebase";
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -15,6 +23,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+// import { useHistory } from "react-router-dom";
 
 // Define an interface for an activity
 interface Activity {
@@ -29,6 +38,9 @@ const Activities = () => {
   const [description, setDescription] = useState("");
   // Use the Activity interface to type the activities state
   const [activities, setActivities] = useState<Activity[]>([]);
+  // const history = useHistory();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchActivityData = () => {
@@ -62,6 +74,34 @@ const Activities = () => {
     } catch (e) {
       console.error("Error adding document: ", e);
     }
+  };
+
+  const handleJoinNow = async (activityId: string) => {
+    const user = auth.currentUser; // get the current user
+
+    if (!user) {
+      console.log("No user is signed in.");
+      return;
+    }
+
+    console.log("Joining activity with ID: ", activityId);
+    // Update the document with id: activityId
+    const docRef = doc(db, "Activities", activityId);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      const activityData = docSnap.data();
+      await updateDoc(docRef, {
+        participants: [...activityData.participants, user.uid], // append current user's uid
+      });
+    } else {
+      console.log("No such document!");
+    }
+
+    // history.push(`/activity/${activityId}`); // navigate to activity with activityId
+  };
+  const handleActivity = () => {
+    navigate("/activity-page");
   };
 
   return (
@@ -116,9 +156,16 @@ const Activities = () => {
             <div
               key={activity.id}
               className="activity shadow m-2 p-4 w-full rounded-md"
+              id="activity-card"
             >
-              <h2>{activity.title}</h2>
-              <p>{activity.description}</p>
+              <div className="internal">
+                <h2>{activity.title}</h2>
+                <p>{activity.description}</p>
+              </div>
+
+              <Button id="joinbutton" onClick={handleActivity}>
+                Join Now
+              </Button>
               {/* <p>{activity.location}</p> */}
             </div>
           ))}

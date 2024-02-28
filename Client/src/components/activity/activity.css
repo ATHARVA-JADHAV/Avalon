@@ -13,3 +13,9 @@
     rgb(69, 116, 197) 100%
   );
 }
+
+#activity-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

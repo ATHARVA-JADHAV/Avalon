@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 
 const auth = getAuth(app);
 
-const AuthenticationPage = () => {
+const ActivityPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -110,4 +110,4 @@ const AuthenticationPage = () => {
   );
 };
 
-export default AuthenticationPage;
+export default ActivityPage;
