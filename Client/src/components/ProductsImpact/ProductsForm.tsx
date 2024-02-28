@@ -33,7 +33,7 @@ const ProductImpact = () => {
 
         <div className='flex h-screen mx-10 items-center justify-center flex-col  '>
         <h1 className='text-4xl font-semibold m-2'>Product Impact Calculator</h1>
-          <input className='w-40 p-4 flextext-center justify-center'placeholder='Enter product name' onChange={handleChange} />
+          <input className='w-40 p-4 *:flextext-center justify-center'placeholder='Enter product name' onChange={handleChange} />
           <button className='w-40 bg-gray-600 rounded-md text-white p-4 m-2' onClick={handleSubmit}>Calculate Impact</button>
           {aiResponse && (
           <div className='w-80 text-center bg-white p-4 rounded-md'>

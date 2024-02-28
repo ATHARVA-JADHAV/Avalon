@@ -15,7 +15,7 @@ const Homepage = () => {
         </div>{" "}
         <div className="flex flex-col items-center justify-center">
         <p className="text-8xl font-serif font-bold m-8">Carbonara</p>
-        <p className="para text-white">Make the world a better place.</p>  
+        <p className="para text-black">Make the world a better place.</p>  
         
         <Button className="w-fit m-4" onClick={() => navigate(`/auth` ) }>Get Started</Button>  
       </div>
