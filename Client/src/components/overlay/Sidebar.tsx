@@ -43,7 +43,7 @@ export default function Sidebar() {
     <div style={{ position: 'fixed', top: 0, left: 0 }}>
       <Button onClick={toggleDrawer(true)}><ViewSidebarIcon sx={{ color: 'black' }} /></Button>
       <Drawer open={open} onClose={toggleDrawer(false)}>
-        <p className='p-2 flex items-center justify-center font-bold text-xl'> Carbonar</p>
+        <a href='./dashboard'className='p-2 flex items-center justify-center font-bold text-xl'> Carbonar</a >
         {DrawerList}
       </Drawer>
     </div>

@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import AuthenticationPage from "./components/authentication/AuthenticationPage";
-import { Dashboard } from "./components/dashboard/Dashboard";
+import Dashboard  from "./components/dashboard/Dashboard";
 import Energyinfo from "./components/Energyconservation/Energyinfo";
 import Homepage from "./components/Homepage/Homepage";
 import ProductsImpact from "./components/ProductsImpact/ProductsImpact";

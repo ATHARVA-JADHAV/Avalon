@@ -41,7 +41,7 @@ const CarbonEmissionForm = () => {
   };
 
   return (
-    <div className="main">
+    <div className="main h-screen w-full flex ">
      
       <div className="bg">
         
@@ -68,7 +68,7 @@ const CarbonEmissionForm = () => {
             </button>
           </form>
           {carbonEmission && (
-            <div className="result">
+            <div className="result font-mono text-3xl font-bold">
               <p>Carbon Emission Rate: {carbonEmission} kg</p>
             </div>
           )}

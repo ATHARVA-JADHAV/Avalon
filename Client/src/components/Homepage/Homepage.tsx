@@ -10,13 +10,17 @@ const Homepage = () => {
   return (
     <div className="flex  overflow-hidden flex-col background items-center justify-center h-screen   bg-cover bg-center">
       <div className="two">
-        <div className="logo" id="compss">
-          <img src={logo}></img>
+        <div className="logo" id="compss flex flex-col items-center justify-center">
+
         </div>{" "}
-        <p className="para">Make the world a better place.</p>  
+        <div className="flex flex-col items-center justify-center">
+        <p className="text-8xl font-serif font-bold m-8">Carbonara</p>
+        <p className="para text-white">Make the world a better place.</p>  
         
-        <Button onClick={() => navigate(`/auth` )  }>Get Started</Button>  
+        <Button className="w-fit m-4" onClick={() => navigate(`/auth` ) }>Get Started</Button>  
       </div>
+        </div>
+        
       
       <div className="eart" id="compss">
         <img src={earth}></img>
