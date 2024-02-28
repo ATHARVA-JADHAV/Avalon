@@ -2,17 +2,19 @@ import React, { useState } from "react";
 import Sidebar from "../overlay/Sidebar";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import EnergyForm from "./Energyform";
-import { LineChart } from '@mui/x-charts/LineChart';
 import "./energy.css";
 
 const API_KEY = "AIzaSyAAO4E-Bqpu4Nr8UHwnmn7bAVxK6odumEE";
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
 const Energyinfo: React.FC = () => {
   const [formData, setFormData] = useState<any>({});
   const [aiResponse, setAiResponse] = useState<string>("");
   const [aiResponsenew, setAiResponsenew] = useState<string>("");
   const [links, setLinks] = useState<string>("");
+  const [facts, setfacts] = useState<string>("");
+
   const [showData, setShowData] = useState(false);
   const [chartData, setChartData] = useState<{ name: string; value: number }[]>([]);
 
@@ -22,15 +24,20 @@ const Energyinfo: React.FC = () => {
 
     try {
       const inputText = `Offer educational content on the environmental impact of energy consumption and the benefits of energy conservation. based on Appliance ${data.appliances} for ${data.usageHours} how the impact happens when we use their green alternative give short summary of 50 words and remove **`;
-      const inputLinks = `calculate the carbon emitted and energy conserved for the graph in short also show the calculations and remove **`;
+      const inputLinks = `calculate the carbon emitted and energy conserved for the graph in short also show the calculations ${data.appliances} for ${data.usageHours} and remove ** structure it and give summary`;
+      const facts = 'facts in related to the ${data.appliances} impact on environment in 50words remove **'
       const result = await model.generateContent(inputText);
       const result2 = await model.generateContent(inputLinks);
+      const result3 = await model.generateContent(facts);
+
       const text = result.response.text();
       const text2 = result2.response.text();
+      const text3 = result3.response.text();
 
       setAiResponsenew(text);
       setLinks(text2);  // Set the AI response
-      setChartData(calculateImpactData(data.appliances, data.usageHours)); // Calculate and set chart data
+      setfacts(text3);  // Set the AI response
+
     } catch (error) {
       console.error("generateContent error: ", error);
     }
@@ -71,9 +78,8 @@ const Energyinfo: React.FC = () => {
                 <p>{links}</p>
               </div>
               <div className="border m-4 p-4 rounded-md w-3/5 h-fit font-mono text-sm">
-
-
-
+              <h1 className="text-xl">Facts</h1>
+                <p>{facts}</p>
               </div>
             </div>
           </div>

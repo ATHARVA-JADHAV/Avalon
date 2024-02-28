@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../overlay/Sidebar";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 import { UserAuth } from "@/context/AuthContext";
+
 
 const tips = [
   'Use reusable shopping bags to reduce plastic waste.',
@@ -43,11 +44,11 @@ export const Dashboard = () => {
       </div>
       <div className="flex background flex-col">
         <Card className="w-25  m-4 h-fit p-4">{tips[tipIndex]}</Card>
-        <div className="flex flex-row"><Card className="w-30 m-4 h-fit p-4"><a href="">Carbon Emission Calculator</a></Card>
-        <Card className="w-30  m-4 h-100  p-4"><a href="">Energy Conservatio Analysis</a></Card>
-        <Card className="w-30  m-4 h-fit p-4"><a href="">Product Impact Analysis</a></Card>
-        <Card className="w-30  m-4 h-fit p-4"><a href="">Activities</a></Card>
-        <Card className="w-30  m-4 h-fit p-4"><a href="">Blogs</a></Card>
+        <div className="flex flex-row"><Card className="w-30 m-4 h-fit p-4"><a href='./carbon'>Carbon Emission Calculator</a></Card>
+        <Card className="w-30  m-4 h-100  p-4"><a href="./energy">Energy Conservatio Analysis</a></Card>
+        <Card className="w-30  m-4 h-fit p-4"><a href="./products">Product Impact Analysis</a></Card>
+        <Card className="w-30  m-4 h-fit p-4"><a href="./activities">Activities</a></Card>
+        <Card className="w-30  m-4 h-fit p-4"><a href="./Blogs">Blogs</a></Card>
 </div>
         
         
