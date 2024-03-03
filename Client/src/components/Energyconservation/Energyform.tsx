@@ -3,6 +3,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import "./energy.css";
+import Sidebar from "../overlay/Sidebar";
 
 const API_KEY = "AIzaSyAAO4E-Bqpu4Nr8UHwnmn7bAVxK6odumEE";
 const genAI = new GoogleGenerativeAI(API_KEY);
@@ -60,7 +61,9 @@ const EnergyForm: React.FC<{
 
   return (
     <div>
+      
       <div className="fixed background top-0 left-0 w-full h-screen flex items-center justify-center bg-opacity-50">
+      <Sidebar/>
         <form
           onSubmit={handleSubmit}
           className="p-10 rounded-lg bg-white shadow-lg"

@@ -1,9 +1,11 @@
 
+import Sidebar from '../overlay/Sidebar'
 import CarbonEmissionForm from './carbonemission'
+Sidebar
 
 const CarbonEmissionMain = () => {
   return (
-    <div><CarbonEmissionForm/></div>
+    <div className='background'><Sidebar/><CarbonEmissionForm/></div>
   )
 }
 
