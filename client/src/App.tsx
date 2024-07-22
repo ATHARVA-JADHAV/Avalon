@@ -6,6 +6,8 @@ import AuthenticationPage from "./components/authentication/AuthenticationPage";
 import ProductsImpact from "./components/ProductsImpact/ProductsImpact";
 import Blog from "./components/Blogs/Blogpage";
 import Activities from "./components/activity/Activities";
+import CarbonEmissionMain from "./components/carbonem/CarbonEmissionMain";
+
 // import Sidebar from "./components/overlay/Sidebar";
 
 export default function App() {
@@ -19,6 +21,7 @@ export default function App() {
         <Route path="/products" element={<ProductsImpact />} />
         <Route path="/activities" element={<Activities />} />
         <Route path="/blogs" element={<Blog />} />
+        <Route path="/carbon" element={<CarbonEmissionMain />} />
       </Routes>
     </Router>
   );
