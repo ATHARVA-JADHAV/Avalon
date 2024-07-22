@@ -12,7 +12,9 @@ const CarbonEmissionForm = () => {
 
   const [carbonEmission, setCarbonEmission] = useState<number | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -30,11 +32,23 @@ const CarbonEmissionForm = () => {
   return (
     <div className="main">
       <div className="bg">
-        <div className="form-element">
-          <p className="text">Carbon Emission Calculator</p>
-          <form className="form" onSubmit={handleSubmit}>
+        <div className="form-element ">
+          <p className="pl-1 text flex flex-row items-center gap-x-64 md:gap-x-40 lg:gap-x-72">
+            CO2- Emission Calculator
+            <img
+              src="https://img.icons8.com/ios/452/co2.png"
+              alt="co2"
+              className=" pl-0 h-10 w-10"
+            />
+          </p>
+          <form className="form flex flex-col" onSubmit={handleSubmit}>
             <label htmlFor="car">Car</label>
-            <select id="car" name="car" value={formData.car} onChange={handleChange}>
+            <select
+              id="car"
+              name="car"
+              value={formData.car}
+              onChange={handleChange}
+            >
               <option value="">Select a car</option>
               <option value="Creta">Creta</option>
               <option value="i20">i20</option>

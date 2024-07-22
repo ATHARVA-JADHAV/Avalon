@@ -1,36 +1,38 @@
-.all{
-  background: radial-gradient(125% 100% at 30% 30%, #ffffff 20%, rgb(69, 116, 197) 100%); 
-}
+
 #blogg{
-  font-size: 33px;
+  color: whitesmoke;
+  font-size: 50px;
   font-weight: bold;
   margin-top: 10%;
   margin-bottom: 2%;
   padding-bottom: 0%;
 }
 #adobe{
+  margin-bottom: 0%;
   font: weight 300;
   font-size: 17px;
-  margin-bottom: 10%;  
   width: 850px;
-  color: #4b4b48;
+  color: #888808;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .content{
   text-align:left
+  
 }
+.card1, .card2, .card3, .card4 {
+  box-shadow: none !important;
+}
+
 .all{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin:0%
 }
 
-.indi{
-  box-shadow: 0 0 10px 5px rgba(40, 65, 89, 0.5);
-  
-}
+
 .card1 {
   text-align: left;
   width: 700px;

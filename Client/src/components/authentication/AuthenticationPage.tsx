@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 // import React from "react";
 import { useState } from "react";
-import '../../App.css'
+import "../../App.css";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { app } from "../../firebase";
 import { UserAuth } from "../../context/AuthContext";
@@ -47,7 +47,7 @@ const AuthenticationPage = () => {
     <div className="flex flex-row h-screen">
       <div className="left-page w-2/4 h-screen flex items-center justify-center bg-black font-bold">
         <a href="" className="text-white mt-8 ml-8 text-xl ">
-          Carbaonara
+          Carbonara
         </a>
       </div>
       <div className="right-page w-full flex items-center justify-center">
